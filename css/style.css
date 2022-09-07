@@ -29,73 +29,92 @@
     --font-medium: 500;
     --font-semi-bold: 600;
 
-    
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-3: 3rem;
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
 }
 
-body {
-    color: #8f8f8f;
-    font: 12px helvetica, sans-serif;
-    background-color: #f8f8f8;
-    border-top: 5px solid #7e7e7e;
+
+@media screen and (min-width: 968px){
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
 }
 
-input[type="text"] {
-    background-color: #f3f3f3;
-    border: 1px solid #e7e7e7;
-    height: 30px;
-    color: #b2b2b2;
-    padding: 0 10px;
-    vertical-align: top;
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
 }
 
-button {
-    color: #fff;
-    background-color: #28c5e6;
-    border: none;
-    height: 32px;
-    font-family: 'Oswald', sans-serif;
+h1,h2,h3,h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
 }
 
-p {
-    margin: 20px 0;
+ul {
+    list-style: none;
 }
 
-#wrapper {
-    max-width: 960px;
-    margin: auto;
-}
-
-nav {
-    padding: 20px 0;
-}
-
-nav a {
+a {
     text-decoration: none;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
+img {
+    max-width: 100%;
 }
 
-nav li {
-    list-style-position: inside;
-    font: 14px 'helvetica' 600;
-    padding: 10px;
+.section {
+    padding: 2rem 0 4rem;
 }
 
-.top-menu li {
-    display: inline-block;
-    padding: 10px 30px;
-    margin: 0;
+.section__title {
+    font-size: var(--h1-font-size);
 }
 
-.top-menu li.active {
-    background: #29c5e6;
-    color: #fff;
+.section__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
 }
 
-.top-menu a {
-    color: #b2b2b2;
+.section__title,
+.section__subtitle {
+    text-align: center;
+}
+
+.container {
+    max-width: 768px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
 }
